@@ -1,9 +1,11 @@
 provider "aws" {
-  region = var.aws_region
+  region  = var.aws_region
+  profile = "terraform-user"
 }
 
+
 resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
+  key_name   = "shane-tet"
   public_key = file(var.public_key_path)
 }
 
@@ -18,7 +20,7 @@ resource "aws_security_group" "web_sg" {
   }
 
   ingress {
-    from_port   = 80
+    from_port   = 3000
     to_port     = 3000
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
