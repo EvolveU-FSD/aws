@@ -1,4 +1,24 @@
 # AWS session examples 
+
+## Cloud Deploy Example
+This project demonstrates a full-stack deployment pipeline using Node.js 22, Docker, Terraform, and GitHub Actions to deploy a Node app to AWS EC2.
+
+## Stack
+- Node.js 22
+- Docker
+- AWS EC2 (free tier)
+- Terraform for Infrastructure as Code
+- GitHub Actions for CI/CD
+
+## Steps
+1. **Terraform** deploys EC2 with Node.js 22 and Docker.
+2. **Push to GitHub** triggers a CI workflow.
+3. **GitHub Actions** copies code to EC2 and deploys a Docker container.
+4. Site is live at EC2 IP (or custom domain if configured).
+
+See `setup.sh`, `Dockerfile`, and `.github/workflows/deploy.yml` for implementation details.
+
+
 ## S3-example, Steps to run:
 
 ### Assumptions:
