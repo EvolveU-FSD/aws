@@ -24,7 +24,7 @@ jobs:
     - name: Remote Docker Build and Run
       run: |
         ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          cd ~/app
+          cd ~/aws
           docker stop webapp || true && docker rm webapp || true
           docker build -t webapp .
           docker run -d -p 80:3000 --name webapp webapp
